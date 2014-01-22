@@ -23,9 +23,12 @@ module VeggiesSync
 
     def add_price_to_veggie(persisted_veggie, fetched_veggie)
       last_price = persisted_veggie.prices.last
-      if last_price.nil? || (last_price.created_at.to_date != fetched_veggie.date)
-        persisted_veggie.prices.create(fetched_veggie.prices)
-      end
+      persisted_veggie.prices.create(fetched_veggie.prices) if at_different_date?(last_price, fetched_veggie)
+    end
+
+    def at_different_date?(persisted_price, fetched_veggie)
+      return true if persisted_price.nil?
+      persisted_price.created_at.to_date != fetched_veggie.date
     end
 
   end

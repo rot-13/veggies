@@ -1,5 +1,5 @@
 class Veggie < ActiveRecord::Base
 
-  has_many :prices
+  has_many :prices, :dependent => :destroy
 
 end
