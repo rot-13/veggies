@@ -14,12 +14,12 @@ class VeggiesFetcher
   private
 
   def mapped_veggie(raw_veggie)
-    sanitized_veggie_fields = sanitized_veggie(raw_veggie)
+    veggie_fields = sanitized_veggie(raw_veggie)
     FetchedVeggie.new(
-        :date            => Date.strptime(sanitized_veggie_fields[0] , '%d/%m/%y'),
-        :heb_name        => sanitized_veggie_fields[1],
-        :primary_price   => sanitized_veggie_fields[2],
-        :secondary_price => sanitized_veggie_fields[3]
+        :date            => parsed_date(veggie_fields[0]),
+        :heb_name        => veggie_fields[1],
+        :primary_price   => parsed_price(veggie_fields[2]),
+        :secondary_price => parsed_price(veggie_fields[3])
     )
   end
 
@@ -27,6 +27,14 @@ class VeggiesFetcher
     raw_veggie.css('td').map do |field|
       field.text.strip
     end
+  end
+
+  def parsed_date(date_string)
+    Date.strptime(date_string , '%d/%m/%y')
+  end
+
+  def parsed_price(price_string)
+    (price_string.to_f * 100).to_i
   end
 
   class FetchedVeggie < Hashie::Dash
