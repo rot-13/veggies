@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Veggies::Application.config.secret_key_base = '31232c67ecbf9294e772ea2d3af6d1087198d4f3e32b05fabfd408eb14f1eee5a5650f95881b8174b8f00eddaff035d6d64524f400e7f8cf1d1335d68cc4e097'
+Veggies::Application.config.secret_key_base = ENV['VEGGIES_SECRET_KEY']
