@@ -10,7 +10,7 @@ module VeggiesSync
     property :secondary_price
 
     def prices
-      slice(:primary_price, :secondary_price)
+      to_hash.symbolize_keys.slice(:primary_price, :secondary_price)
     end
 
   end

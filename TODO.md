@@ -1,0 +1,2 @@
+- Put better logs (prices updated).
+- Migrate to better server/Europe.
