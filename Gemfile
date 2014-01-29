@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'compass-rails'
 gem 'font-awesome-rails'
+gem 'twitter'
+gem 'omniauth-twitter'
 
 group :development do
   gem 'powder'
