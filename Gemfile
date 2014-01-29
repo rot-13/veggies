@@ -21,6 +21,7 @@ gem 'omniauth-twitter'
 
 group :development do
   gem 'powder'
+  gem 'debugger'
 end
 
 group :production do
