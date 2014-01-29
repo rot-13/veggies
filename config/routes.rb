@@ -1,6 +1,8 @@
 Veggies::Application.routes.draw do
 
-  root 'veggies#salad'
+  root 'admin#dashboard'
+
+  resources :veggies, :only => [:update]
 
   scope :admin, :controller => :admin do
     get :dashboard

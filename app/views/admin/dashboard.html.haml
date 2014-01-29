@@ -1,0 +1,41 @@
+%h2
+  %ol.breadcrumb
+    %li
+      = link_to t('admin.dashboard.title'), root_path
+
+-#%table.table.table-striped
+-#  %thead
+-#    %tr
+-#      %th= t('admin.users.columns.name')
+-#      %th= t('admin.users.columns.username')
+-#      %th= t('admin.users.columns.email')
+-#      %th= t('admin.users.columns.role')
+-#      %th= t('admin.users.columns.vendor')
+-#      %th= t('admin.users.columns.banned')
+-#      %th= t('admin.users.columns.pin_code')
+-#  %tbody
+-#    - @users.each do |user|
+-#      %tr
+-#        %td
+-#          %i.icon-user
+-#          = user.full_name
+-#        %td= user.username
+-#        %td= user.email
+-#        %td
+-#          = form_for user, :url => user_admin_users_update_path(user), :remote => true do |f|
+-#            = f.select(:role, User::ROLES)
+-#        %td
+-#          = form_for user, :url => user_admin_users_update_path(user), :remote => true do |f|
+-#            = f.select(:vendor_id, list_of_vendors, :include_blank => true)
+-#        %td
+-#          = form_for user, :url => user_admin_users_update_path(user), :remote => true do |f|
+-#            = f.check_box(:banned)
+-#            = f.label :banned
+-#        %td
+-#          %small= user.pin_code || 'N/A'
+
+:javascript
+  $(document).ready(function(){
+    $('select').on('change', function() { $(this).submit() });
+    $('input').on('change', function() { $(this).submit() });
+  });

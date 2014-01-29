@@ -3,6 +3,7 @@
 - Update when importancy.
 - Migrate to better (Europe) in Heroku.
 - After migrating, download database to local.
+- Add admin user and password to env variable.
 
 ## ADDITIONAL IDEAS ##
 

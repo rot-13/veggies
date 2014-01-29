@@ -27,8 +27,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
-    bootstrap-sass (3.0.3.0)
-      sass (~> 3.2)
     builder (3.1.4)
     chunky_png (1.2.9)
     coffee-rails (4.0.1)
@@ -48,8 +46,6 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    font-awesome-rails (4.0.3.1)
-      railties (>= 3.2, < 5.0)
     fssm (0.2.10)
     haml (4.0.5)
       tilt
@@ -131,10 +127,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.0.3.0)
   coffee-rails (~> 4.0.0)
   compass-rails
-  font-awesome-rails
   haml
   hashie
   jquery-rails
