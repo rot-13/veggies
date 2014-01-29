@@ -4,6 +4,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'thin'
 gem 'pg'
+gem 'quiet_assets'
 
 gem 'nokogiri'
 gem 'hashie'

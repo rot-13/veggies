@@ -1,0 +1,10 @@
+%tr
+  %td= veggie.icon
+  %td= veggie.heb_name
+  %td
+    = form_for veggie, :url => veggie_path(veggie), :method => :put, :remote => true do |f|
+      = f.text_field(:eng_name)
+  %td= veggie.color
+  %td
+    = form_for veggie, :url => veggie_path(veggie), :method => :put, :remote => true do |f|
+      = f.text_field(:weight)
