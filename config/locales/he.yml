@@ -4,3 +4,10 @@ he:
   admin:
     dashboard:
       title: 'מנהל הירקות'
+      table:
+        heb_name: 'שם עברי'
+        eng_name: 'שם אנגלי'
+        color: 'צבע'
+        icon: 'אייקון'
+        weight: 'חשיבות'
+
