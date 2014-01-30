@@ -2,8 +2,8 @@ require 'twitter_poster'
 require 'active_support/number_helper'
 
 module VeggiesPublish
-  TWEET_PREFIX = 'רק היום'
-  TWEET_VEGGIE_TEMPLATE = "%{name} ב%{price}"
+  TWEET_PREFIX = 'מחירון:'
+  TWEET_VEGGIE_TEMPLATE = "%{name} ב-%{price}"
 
   class TwitterPublisher
     def initialize(twitter_app_credentials)
@@ -26,7 +26,8 @@ module VeggiesPublish
         price_in_shekels_str = ActiveSupport::NumberHelper.number_to_currency(price_in_shekels, unit: '₪')
         TWEET_VEGGIE_TEMPLATE % {name: veggie.heb_name, price: price_in_shekels_str}
       end
-      "#{TWEET_PREFIX} #{veggies_text.join(', ')}."
+      hash_tags = account.hash_tags.map { |ht| "\##{ht}" }
+      "#{TWEET_PREFIX} #{veggies_text.join(', ')} #{hash_tags.join(' ')}"
     end
   end
 end
