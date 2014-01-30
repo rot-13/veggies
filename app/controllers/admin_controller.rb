@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 
-  admin_only
+  before_filter :admin_only
 
   def dashboard
     @veggies = Veggie.by_weights.to_a

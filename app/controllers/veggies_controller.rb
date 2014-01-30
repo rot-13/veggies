@@ -1,6 +1,6 @@
 class VeggiesController < ApplicationController
 
-  admin_only
+  before_filter :admin_only
 
   def update
     current_veggie.update!(veggie_params)

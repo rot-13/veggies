@@ -8,4 +8,5 @@ Veggies::Application.routes.draw do
     get :dashboard
   end
 
+  get "/auth/:provider/callback" => "auth#callback"
 end
