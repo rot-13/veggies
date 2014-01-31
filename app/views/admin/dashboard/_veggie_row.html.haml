@@ -4,7 +4,9 @@
   %td
     = form_for veggie, :url => veggie_path(veggie), :method => :put, :remote => true do |f|
       = f.text_field(:eng_name)
-  %td= veggie.color
+  %td
+    = form_for veggie, :url => veggie_path(veggie), :method => :put, :remote => true do |f|
+      = f.select(:color, veggies_colors_options)
   %td
     = form_for veggie, :url => veggie_path(veggie), :method => :put, :remote => true do |f|
       = f.text_field(:weight)

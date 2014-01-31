@@ -17,7 +17,7 @@
         = render 'admin/dashboard/veggie_row', :veggie => veggie
 
 :javascript
-  $(document).ready(function(){
+  $(document).on('ready page:load', function() {
     $('select').on('change', function() { $(this).submit() });
     $('input').on('change', function() { $(this).submit() });
   });
