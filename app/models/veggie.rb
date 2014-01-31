@@ -1,6 +1,6 @@
 class Veggie < ActiveRecord::Base
 
-  scope :by_weights, order(:weight)
+  scope :by_weights, -> { order('heb_name ASC').order('weight ASC') }
 
   has_many :prices, :dependent => :destroy
   has_one :twitter_account

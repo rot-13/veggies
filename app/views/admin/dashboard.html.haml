@@ -3,17 +3,18 @@
     %li
       = link_to t('admin.dashboard.title'), root_path
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th= t('admin.dashboard.table.icon')
-      %th= t('admin.dashboard.table.heb_name')
-      %th= t('admin.dashboard.table.eng_name')
-      %th= t('admin.dashboard.table.color')
-      %th= t('admin.dashboard.table.weight')
-  %tbody
-    - @veggies.each do |veggie|
-      = render 'admin/dashboard/veggie_row', :veggie => veggie
+.container
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= t('admin.dashboard.table.icon')
+        %th= t('admin.dashboard.table.heb_name')
+        %th= t('admin.dashboard.table.eng_name')
+        %th= t('admin.dashboard.table.color')
+        %th= t('admin.dashboard.table.weight')
+    %tbody
+      - @veggies.each do |veggie|
+        = render 'admin/dashboard/veggie_row', :veggie => veggie
 
 :javascript
   $(document).ready(function(){

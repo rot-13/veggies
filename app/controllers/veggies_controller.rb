@@ -4,7 +4,10 @@ class VeggiesController < ApplicationController
 
   def update
     current_veggie.update!(veggie_params)
-    redirect_to :back
+    respond_to do |format|
+      format.json { render :json => current_veggie }
+      format.html { redirect_to :back }
+    end
   end
 
   private
