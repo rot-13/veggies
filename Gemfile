@@ -24,6 +24,11 @@ group :development do
   gem 'debugger'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem "factory_girl_rails", "~> 4.0"
+end
+
 group :production do
   gem 'rails_12factor'
 end
