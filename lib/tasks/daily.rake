@@ -11,7 +11,7 @@ namespace :daily do
 
   desc 'publishes the veggies to twitter'
   task :twitter_publish => :environment do
-    next puts "SHABES! Skipping the job" if jewish_weekend?
+    #next puts "SHABES! Skipping the job" if jewish_weekend?
 
     puts 'Started publishing veggies to twitter'
     publisher = VeggiesPublish::TwitterPublisher.new(consumer_key: ENV['TWITTER_CONSUMER_KEY'], consumer_secret: ENV['TWITTER_CONSUMER_SECRET'])

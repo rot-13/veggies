@@ -1,6 +1,7 @@
 class TwitterAccount < ActiveRecord::Base
 
   belongs_to :veggie
+  validates_presence_of :access_token, :access_secret, :handle, :veggie 
 
   def veggies_by_general_name
     #In here i'm assuming that the first word of the raw veggie name is the general veggie.

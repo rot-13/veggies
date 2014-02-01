@@ -1,0 +1,33 @@
+= form_for @twitter_account, :html => {:role => :form, :class => 'form-horizontal'} do |f|
+  - if @twitter_account.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@twitter_account.errors.count, "error")} prohibited this twitter_account from being saved:"
+      %ul
+        - @twitter_account.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :handle, :class => 'col-sm-2'
+    .col-sm-10
+      = f.text_field :handle, :class => 'form-control'
+    %br
+  .form-group
+    = f.label :access_token, :class => 'col-sm-2'
+    .col-sm-10
+      = f.text_field :access_token, :class => 'form-control'
+    %br
+  .form-group
+    = f.label :access_secret, :class => 'col-sm-2'
+    .col-sm-10
+      = f.text_field :access_secret, :class => 'form-control'
+    %br
+  .form-group
+    = f.label :hash_tags, :class => 'col-sm-2'
+    .col-sm-10
+      = f.text_field :hash_tags, :class => 'form-control'
+  .form-group
+    = f.label :veggie, :class => 'col-sm-2'
+    .col-sm-10
+      = collection_select(:twitter_account, :veggie_id, Veggie.all, :id, :heb_name)
+
+  = f.submit 'Save', :class => 'btn btn-default'

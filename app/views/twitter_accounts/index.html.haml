@@ -1,0 +1,21 @@
+%h1.page-header= t('admin.twitter_accounts.title')
+
+%table.table
+  %thead
+    %tr
+      %th
+        Handle
+      %th
+      %th
+      %th
+
+  - @twitter_accounts.each do |twitter_account|
+    %tr
+      %td= twitter_link_to twitter_account.handle
+      %td= link_to 'Show', twitter_account
+      %td= link_to 'Edit', edit_twitter_account_path(twitter_account)
+      %td= link_to 'Destroy', twitter_account, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Twitter account', new_twitter_account_path

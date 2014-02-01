@@ -10,3 +10,6 @@ he:
         color: 'צבע'
         icon: 'אייקון'
         weight: 'חשיבות'
+
+    twitter_accounts:
+      title: 'ניהול חשבונות טוויטר'

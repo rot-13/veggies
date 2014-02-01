@@ -6,4 +6,8 @@ class AdminController < ApplicationController
     @veggies = Veggie.by_weights.to_a
   end
 
+  def twitter_accounts
+    @accounts = TwitterAccount.all
+  end
+
 end

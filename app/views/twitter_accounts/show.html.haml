@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%table.table
+  %thead
+    %tr
+      %th
+        Handle
+      %th
+        Access token
+      %th
+        Access secret
+      %th
+        Hash tags
+      %th
+        Veggie
+
+  %tbody
+    %tr
+      %td= @twitter_account.handle
+      %td= @twitter_account.access_token
+      %td= @twitter_account.access_secret
+      %td= @twitter_account.hash_tags
+      %td= @twitter_account.veggie.heb_name
+
+= link_to 'Edit', edit_twitter_account_path(@twitter_account)
+\|
+= link_to 'Back', twitter_accounts_path
