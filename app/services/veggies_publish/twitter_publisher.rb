@@ -27,14 +27,10 @@ module VeggiesPublish
         TWEET_VEGGIE_TEMPLATE % {name: veggie.heb_name, price: price_in_shekels(veggie.current_primary_price)}
       end
       tweet_length = compose_tweet(veggies_text, hash_tags).length
-      if tweet_length > MAX_TWEET_LENGTH
-        tweet_count = (tweet_length / MAX_TWEET_LENGTH.to_f).ceil
-        slice_count = (veggies_text.count/tweet_count.to_f).ceil
-        veggies_text.each_slice(slice_count).to_a.map do |vtext|
-          compose_tweet(vtext, hash_tags)
-        end
-      else
-        [compose_tweet(veggies_text, hash_tags)]
+      tweet_count = (tweet_length / MAX_TWEET_LENGTH.to_f).ceil
+      slice_count = (veggies_text.count/tweet_count.to_f).ceil
+      veggies_text.each_slice(slice_count).to_a.map do |vtext|
+        compose_tweet(vtext, hash_tags)
       end
     end
 
