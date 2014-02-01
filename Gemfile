@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'compass-rails'
 gem 'twitter'
 gem 'omniauth-twitter'
+gem 'awesome_print'
 
 group :development do
   gem 'powder'
