@@ -11,6 +11,10 @@ class TwitterPoster
   end
 
   def post_tweet(text)
-    @client.update(text)
+    begin
+      @client.update(text)
+    rescue Twitter::Error => e
+      puts "twitter error: #{e.to_s}. tried to tweet text: #{text}"
+    end
   end
 end
