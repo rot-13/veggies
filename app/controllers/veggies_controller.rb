@@ -12,6 +12,7 @@ class VeggiesController < ApplicationController
 
     @dates = prices.map(&:created_at).map { |date| date.strftime("%d/%m/%y") }.to_json
     @values = prices.map(&:primary_price).map { |value| value / 100 }.to_json
+    @high_values = prices.map(&:secondary_price).map { |value| value / 100 }.to_json
 
   end
 

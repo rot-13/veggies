@@ -1,17 +1,25 @@
 %h1.page-header= @veggie.heb_name
-%canvas{:id => 'chart', :width => 800, :height => 400}
+%canvas{:id => 'chart', :width => 1024, :height => 400}
 
 :javascript
   var data = {
   	labels : #{@dates},
   	datasets : [
+        {
+            fillColor : "rgba(220,100,220,0.5)",
+            data : #{@high_values}
+        },
   		{
-  			fillColor : "rgba(220,220,220,0.5)",
+  			fillColor : "rgba(100,220,220,0.5)",
   			data : #{@values}
   		}
   	]
   }
 
+  var options = {
+    animation: false,
+    pointDot: false
+  }
 
   var ctx = document.getElementById("chart").getContext("2d");
-  var chart = new Chart(ctx).Line(data,{});
+  var chart = new Chart(ctx).Line(data, options);
