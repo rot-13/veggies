@@ -1,0 +1,7 @@
+%h1.page-header= t('veggies.index.title')
+
+%table.table
+  %tbody
+    - @veggies.each do |veggie|
+      %tr
+        %td= link_to(veggie.heb_name, veggie)

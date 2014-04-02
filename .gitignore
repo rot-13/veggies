@@ -16,3 +16,4 @@
 /tmp
 .idea.powenv
 .powenv
+*.dump
