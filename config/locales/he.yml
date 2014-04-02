@@ -1,6 +1,10 @@
 he:
   title: 'ירוקים'
 
+  veggies:
+    index:
+      title: 'ירקות'
+
   admin:
     dashboard:
       title: 'מנהל הירקות'
